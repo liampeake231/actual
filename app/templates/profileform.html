@@ -15,12 +15,18 @@
         </p>
         <p>
             {{ form.lname.label }}<br>
-            {{ form.lname() }}<br>
+            {{ form.lname(size=64) }}<br>
             {% for error in form.lname.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
-
+        <p>
+            {{ form.style.label }}<br>
+            {{ form.style() }}<br>
+            {% for error in form.style.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
         <p>
             {{ form.image.label }}<br>
             {% if current_user.image %}
