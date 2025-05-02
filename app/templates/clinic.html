@@ -12,10 +12,10 @@
     {% endif %}
     <br>
         {% if clinic.author == current_user %}
-            <a data-toggle="tooltip" data-placement="top" title="Delete Clinic" href="/thrift/delete/{{clinic.id}}">
+            <a data-toggle="tooltip" data-placement="top" title="Delete thrift" href="/thrift/delete/{{clinic.id}}">
                 <img width="40" class="bottom-image" src="/static/delete.png">
             </a>
-            <a data-toggle="tooltip" data-placement="top" title="Edit Clinic" href="/thrift/edit/{{clinic.id}}">
+            <a data-toggle="tooltip" data-placement="top" title="Edit thrift" href="/thrift/edit/{{clinic.id}}">
                 <img width="40" class="bottom-image" src="/static/edit.png">
             </a>
         {% endif %}
@@ -37,13 +37,15 @@
         <p class="fs-3 text-break"> 
                 {{clinic.content}}
         </p>
-        <h1 class="display-5">Description: {{clinic.description}}</h1>
+        <h1 class="display-5">Description: {{clinic.description}} <br>
+            {{clinic.phone}} {{clinic.email}} {{clinic.website}}
+        </h1>
         <p class="fs-3 text-break">
                 {{clinic.content}}
         </p>
         
     {% else %}
-        <h1 class="display-5">No Clinic</h1>
+        <h1 class="display-5">No thrift</h1>
     {% endif %}
     
     {% endblock %}
