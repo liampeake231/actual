@@ -7,7 +7,7 @@
         <h1 class="display-1">All Clinics</h1>
     </div>
     <div class="col">
-        <a href="/clinic/new" class="btn btn-primary btn-sm mt-5" role="button">New Clinic</a>
+        <a href="/thrift/new" class="btn btn-primary btn-sm mt-5" role="button">New Clinic</a>
     </div>
 </div>
 
@@ -19,10 +19,10 @@
                 <h3 class="display-0.5"></h3>
                 {% endif %}
 
-                <a href="/clinic/delete/{{clinic.id}}">
+                <a href="/thrift/delete/{{clinic.id}}">
                     <img width="25" class="bottom-image" src="/static/delete.png">
                 </a>
-                <a href="/clinic/edit/{{clinic.id}}">
+                <a href="/thrift/edit/{{clinic.id}}">
                     <img width="25" class="bottom-image" src="/static/edit.png">
                 </a>
             </div>
@@ -31,7 +31,7 @@
                 <h3 class="display-0.5">Date</h3>
                 {% endif %}
 
-                <a href="/clinic/{{clinic.id}}">
+                <a href="/thrift/{{clinic.id}}">
                     {{moment(clinic.createdate).calendar()}}
                 </a>
             </div>

@@ -12,10 +12,10 @@
     {% endif %}
     <br>
         {% if clinic.author == current_user %}
-            <a data-toggle="tooltip" data-placement="top" title="Delete Clinic" href="/clinic/delete/{{clinic.id}}">
+            <a data-toggle="tooltip" data-placement="top" title="Delete Clinic" href="/thrift/delete/{{clinic.id}}">
                 <img width="40" class="bottom-image" src="/static/delete.png">
             </a>
-            <a data-toggle="tooltip" data-placement="top" title="Edit Clinic" href="/clinic/edit/{{clinic.id}}">
+            <a data-toggle="tooltip" data-placement="top" title="Edit Clinic" href="/thrift/edit/{{clinic.id}}">
                 <img width="40" class="bottom-image" src="/static/edit.png">
             </a>
         {% endif %}
