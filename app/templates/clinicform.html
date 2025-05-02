@@ -2,8 +2,8 @@
 
 {% block body %}
 
-    <h1>Input New Clinic</h1>
-        <h4>If your clinic is not already in our database, add your clinic's info here for it to show up!</h4>
+    <h1>Input New Thrift</h1>
+        <h4>If your thrift store is not already in our database, add your thrift's info here for it to show up!</h4>
         <!--List all errors in a group at the top-->
         {% for field in form.errors %}
             {% for error in form.errors[field] %}
@@ -17,6 +17,18 @@
         <p>
             {{ form.name.label }}<br>
             {{ form.name(size=64) }}<br>
+        </p>
+        <p>
+            {{ form.phone.label }}<br>
+            {{ form.phone(size=64) }}<br>
+        </p>
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=64) }}<br>
+        </p>
+        <p>
+            {{ form.website.label }}<br>
+            {{ form.website(size=64) }}<br>
         </p>
         <p>
             Street: {{ form.streetAddress(size=64) }}<br>

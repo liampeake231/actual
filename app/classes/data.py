@@ -76,6 +76,9 @@ class Clinic(Document):
     state = StringField()
     zipcode = StringField()
     description = StringField()
+    phone = StringField()
+    website = StringField()
+    email = StringField()
     lat = FloatField()
     lon = FloatField()
     
@@ -93,7 +96,9 @@ class Store(Document):
     state = StringField()
     zipcode = StringField()
     description = StringField()
-    price = StringField()
+    phone = StringField()
+    website = StringField()
+    email = StringField()
     lat = FloatField()
     lon = FloatField()
     

@@ -10,7 +10,7 @@ from flask_login import login_required
 import datetime as dt
 
 
-@app.route('/clinic/map')
+@app.route('/thrift/map')
 @login_required
 def clinicMap():
 
@@ -18,7 +18,7 @@ def clinicMap():
 
     return render_template('cliniclocator.html',clinics=clinics)
 
-@app.route('/clinic/list')
+@app.route('/thrift/list')
 @login_required
 def clinicList():
 
@@ -27,7 +27,7 @@ def clinicList():
     return render_template('clinics.html',clinics=clinics)
 
 
-@app.route('/clinic/<clinicID>')
+@app.route('/thrift/<clinicID>')
 @login_required
 def clinic(clinicID):
 
@@ -36,13 +36,13 @@ def clinic(clinicID):
     return render_template('clinic.html',clinic=thisClinic)
 
 
-@app.route('/clinic/delete/<clinicID>')
+@app.route('/thrift/delete/<clinicID>')
 @login_required
 def clinicDelete(clinicID):
     deleteClinic = Clinic.objects.get(id=clinicID)
 
     deleteClinic.delete()
-    flash('The Clinic was deleted.')
+    flash('The Thrift was deleted.')
     return redirect(url_for('clinicList'))
 
 def updateLatLon(clinic):
@@ -65,13 +65,13 @@ def updateLatLon(clinic):
                 lat = float(r[0]['lat']),
                 lon = float(r[0]['lon'])
             )
-            flash(f"clinic lat/lon updated")
+            flash(f"thrift lat/lon updated")
             return(clinic)
         else:
             flash('unable to retrieve lat/lon')
             return(clinic)
 
-@app.route('/clinic/new', methods=['GET', 'POST'])
+@app.route('/thrift/new', methods=['GET', 'POST'])
 @login_required
 def clinicNew():
     form = ClinicForm()
@@ -86,6 +86,9 @@ def clinicNew():
             zipcode = form.zipcode.data,
             description = form.description.data,
             author = current_user.id,
+            phone = form.phone.data,
+            website = form.website.data,
+            email = form.email.data,
             modifydate = dt.datetime.utcnow,
         )
         newClinic.save()
@@ -98,7 +101,7 @@ def clinicNew():
 
     return render_template('clinicform.html',form=form)
 
-@app.route('/clinic/edit/<clinicID>', methods=['GET', 'POST'])
+@app.route('/thrift/edit/<clinicID>', methods=['GET', 'POST'])
 @login_required
 def clinicEdit(clinicID):
     editClinic = Clinic.objects.get(id=clinicID)
@@ -116,6 +119,9 @@ def clinicEdit(clinicID):
             state = form.state.data,
             zipcode = form.zipcode.data,            
             description = form.description.data,
+            phone = form.phone.data,
+            website = form.website.data,
+            email = form.email.data,
             modifydate = dt.datetime.utcnow,
         )
         editClinic = updateLatLon(editClinic)
@@ -127,5 +133,8 @@ def clinicEdit(clinicID):
     form.state.data = editClinic.state
     form.zipcode.data = editClinic.zipcode
     form.description.data = editClinic.description
+    form.phone.data = editClinic.phone
+    form.website.data = editClinic.website
+    form.email.data = editClinic.email
 
     return render_template('clinicform.html',form=form)
