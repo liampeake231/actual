@@ -86,7 +86,6 @@ def clinicNew():
             zipcode = form.zipcode.data,
             description = form.description.data,
             author = current_user.id,
-            cost = form.cost.data,
             phone = form.phone.data,
             website = form.website.data,
             email = form.email.data,
@@ -120,7 +119,6 @@ def clinicEdit(clinicID):
             state = form.state.data,
             zipcode = form.zipcode.data,            
             description = form.description.data,
-            cost = form.cost.data,
             phone = form.phone.data,
             website = form.website.data,
             email = form.email.data,
@@ -135,7 +133,6 @@ def clinicEdit(clinicID):
     form.state.data = editClinic.state
     form.zipcode.data = editClinic.zipcode
     form.description.data = editClinic.description
-    form.cost.data = editClinic.cost
     form.phone.data = editClinic.phone
     form.website.data = editClinic.website
     form.email.data = editClinic.email

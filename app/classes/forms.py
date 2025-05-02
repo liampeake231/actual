@@ -32,7 +32,6 @@ class ClinicForm(FlaskForm):
     state = StringField('State', validators=[DataRequired()])
     zipcode = StringField('Zipcode',validators=[DataRequired()])
     description = StringField('Description', validators=[DataRequired()])
-    cost = StringField('Cost', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
 
