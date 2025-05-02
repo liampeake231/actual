@@ -6,18 +6,35 @@
 <h1>Oakland Thrift Finder</h1>
 
 <p>Welcome to the Oakland Thrift Finder! This is a simple web application that helps you find thrift stores in Oakland, California. You can search for thrift stores by name or location.</p>
-<p>To get started, use the search bar above to enter a thrift store name or location. You can also browse the list of thrift stores below.</p>
+<p>To get started, use the search bar above to enter a thrift store name or location. You can also browse the list of thrift stores and thrift events below.</p>
 
-<h2>Thrift Store Directory</h2>
-<ul id="thrift-store-list">
-  <li data-name="Goodwill" data-location="Downtown Oakland">Goodwill - Downtown Oakland</li>
-  <li data-name="Out of the Closet" data-location="Telegraph Ave">Out of the Closet - Telegraph Ave</li>
-  <li data-name="Thrift Town" data-location="Fruitvale">Thrift Town - Fruitvale</li>
-  <li data-name="Community Thrift" data-location="Grand Ave">Community Thrift - Grand Ave</li>
-  <li data-name="American Cancer Society Discovery Shop" data-location="127 41st St">American Cancer Society Discovery Shop - 127 41st St</li>
-  <li data-name="Goodwill Store & Donation Center" data-location="6624 San Pablo Ave, Emeryville">Goodwill Store & Donation Center - 6624 San Pablo Ave, Emeryville</li>
-  <li data-name="Salvation Army" data-location="Oakland">Salvation Army - Oakland - 601 Webster St</li>
-</ul>
+<div class="container">
+  <div class="row">
+    <!-- Thrift Store Directory -->
+    <div class="col-md-6">
+      <h2>Thrift Store Directory</h2>
+      <ul id="thrift-store-list">
+        <li data-name="Goodwill" data-location="Downtown Oakland">Goodwill - 6624 San Pablo Ave</li>
+        <li data-name="Out of the Closet" data-location="Telegraph Ave">Out of the Closet - Telegraph Ave</li>
+        <li data-name="Thrift Town" data-location="Fruitvale">Thrift Town - Fruitvale</li>
+        <li data-name="Community Thrift" data-location="Grand Ave">Community Thrift - Grand Ave</li>
+        <li data-name="American Cancer Society Discovery Shop" data-location="127 41st St">American Cancer Society Discovery Shop - 127 41st St</li>
+        <li data-name="Goodwill Store & Donation Center" data-location="6624 San Pablo Ave, Emeryville">Goodwill Store & Donation Center - 6624 San Pablo Ave, Emeryville</li>
+        <li data-name="Salvation Army" data-location="Oakland">Salvation Army - Oakland - 601 Webster St</li>
+      </ul>
+    </div>
 
-<br><br><br>
+    <!-- Thrift Events/Popups -->
+    <div class="col-md-6">
+      <h2>Thrift Events & Popups</h2>
+      <ul id="thrift-events-list">
+        <li data-name="Vintage Market" data-location="Lake Merritt">Vintage Market - Lake Merritt, May 15th</li>
+        <li data-name="Pop-Up Thrift" data-location="Downtown Oakland">Pop-Up Thrift - Downtown Oakland, June 10th</li>
+        <li data-name="Community Garage Sale" data-location="Fruitvale">Community Garage Sale - Fruitvale, July 5th</li>
+        <li data-name="Charity Thrift Event" data-location="Grand Ave">Charity Thrift Event - Grand Ave, August 20th</li>
+        <li data-name="Sustainable Fashion Fair" data-location="Telegraph Ave">Sustainable Fashion Fair - Telegraph Ave, September 12th</li>
+      </ul>
+    </div>
+  </div>
+</div>
 {% endblock %}
